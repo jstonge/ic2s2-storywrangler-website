@@ -7,27 +7,25 @@ export const conference = {
 	conferenceDates: 'July 28–31, 2026'
 };
 
-export const abstract =
-	'This tutorial introduces the "StoryWrangler" project, a platform for analyzing massive large-scale corpora such as Twitter, Wikipedia, Bluesky, Reddit, and Google Books. Despite their differences, these platforms exhibit similar heavy-tailed statistical properties, allowing consistent analytical frameworks while respecting platform-specific dynamics. We show how the StoryWrangler platform implements principled measurements such as rank-turbulence divergence to detect and quantify changes in text over time. These instruments help identify when language use shifts dramatically, track the rise and fall of narratives, and compare patterns across timescales and platforms. We discuss the technical challenge of providing different levels of technical accessibility: front-end portals for visual exploration without coding, Python packages for custom analyses, and API access for large-scale studies.';
+export const abstract = [
+	'This tutorial introduces the "StoryWrangler" project, a platform for analyzing massive large-scale corpora such as Twitter, Wikipedia, Bluesky, Reddit, and Google Books. Each dataset offers a distinct window into collective discourse: Twitter captures real-time conversation, Wikipedia documents collaborative knowledge construction, Reddit preserves threaded community discussions, and Google Books provides historical context. Despite their differences, these platforms exhibit similar heavy-tailed statistical properties, allowing consistent analytical frameworks while respecting platform-specific dynamics. We cast them into a set of interconnected time series that track the changing usage rates of words, phrases, and topics.',
+	'We show how the StoryWrangler platform implements principled measurements such as rank-turbulence divergence to detect and quantify changes in text over time. These instruments help identify when language use shifts dramatically, track the rise and fall of narratives, and compare patterns across timescales and platforms. Drawing on the work of research engineers at the Vermont Complex Systems Institute, we offer a window into a suite of scientific tools for measuring collective attention, working toward a unified StoryWrangler for everything.',
+	'The platform offers three levels of technical accessibility: front-end portals for visual exploration without coding, Python packages for custom analyses, and API access for large-scale studies. We discuss the technical challenges that come with ensuring accessibility for researchers across all technical backgrounds.'
+];
 
 export const platforms = ['Twitter', 'Wikipedia', 'Bluesky', 'Reddit', 'Google Books'];
 
+export const prerequisitesIntro =
+	'No prior knowledge of computational analysis will be necessary. Some familiarity with Python will be beneficial for following along with notebooks, but anyone should be able to use the web interface if they would like to take a no-code route.';
+
 export const prerequisites = [
 	{
-		title: 'A laptop with internet access',
-		detail: 'The hands-on portions run in the browser and against live APIs — no local GPU or heavy setup required.'
+		title: 'No prior experience required',
+		detail: 'No prior knowledge of computational analysis is necessary. The web interface lets anyone take a no-code route through the material.'
 	},
 	{
-		title: 'Working knowledge of Python 3',
-		detail: 'You should be comfortable running scripts and notebooks. Familiarity with pandas is helpful but not required.'
-	},
-	{
-		title: 'Basic data-analysis intuition',
-		detail: 'We keep the math light. A conceptual grasp of distributions and time series is all you need to follow along.'
-	},
-	{
-		title: 'No prior StoryWrangler experience',
-		detail: 'We start from the front-end portal, so newcomers and experienced analysts can both jump in.'
+		title: 'Python is a bonus, not a requirement',
+		detail: 'Some familiarity with Python is beneficial for following along with the notebooks, but it is not needed to take part.'
 	}
 ];
 

@@ -17,6 +17,7 @@
 		conference,
 		abstract,
 		platforms,
+		prerequisitesIntro,
 		prerequisites,
 		schedule,
 		outcomes,
@@ -58,7 +59,7 @@
 
 <svelte:head>
 	<title>{conference.title} — {conference.kicker}</title>
-	<meta name="description" content={abstract.slice(0, 155)} />
+	<meta name="description" content={abstract[0].slice(0, 155)} />
 </svelte:head>
 
 <!-- Sticky navigation -->
@@ -128,7 +129,9 @@
 				<Card.Description>What this tutorial covers</Card.Description>
 			</Card.Header>
 			<Card.Content class="flex flex-col gap-5">
-				<p class="text-base leading-relaxed text-pretty">{abstract}</p>
+				{#each abstract as paragraph (paragraph)}
+					<p class="text-base leading-relaxed text-pretty">{paragraph}</p>
+				{/each}
 				<div class="flex flex-wrap gap-2">
 					{#each platforms as platform (platform)}
 						<Badge variant="outline">{platform}</Badge>
@@ -148,6 +151,7 @@
 		</p>
 
 		<h3 class="mt-10 text-lg font-semibold">Prerequisites</h3>
+		<p class="text-muted-foreground mt-2 max-w-3xl leading-relaxed">{prerequisitesIntro}</p>
 		<div class="mt-4 grid gap-4 sm:grid-cols-2">
 			{#each prerequisites as item (item.title)}
 				<Card.Root>
