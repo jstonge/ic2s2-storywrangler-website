@@ -171,12 +171,15 @@
 		<h3 class="mt-12 text-lg font-semibold">Schedule</h3>
 		<p class="text-muted-foreground mt-1 text-sm">{conference.sessionTime} · {conference.room}</p>
 		<div class="mt-4 flex flex-col gap-3">
-			{#each schedule as block, i (block.time)}
-				<Card.Root>
-					<Card.Content class="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:gap-6">
-						<div class="flex items-center gap-3 sm:w-40 sm:shrink-0">
-							<Badge variant="outline" class="tabular-nums">{i + 1}</Badge>
+			{#each schedule as block (block.time)}
+				{@const isBreak = block.title === 'Break'}
+				<Card.Root class={isBreak ? 'bg-muted/40 border-dashed' : ''}>
+					<Card.Content class="flex flex-col gap-3 sm:flex-row sm:gap-6">
+						<div class="flex items-center gap-2 sm:w-44 sm:shrink-0 sm:flex-col sm:items-start sm:gap-1">
 							<span class="text-sm font-medium tabular-nums">{block.time}</span>
+							<Badge variant={isBreak ? 'ghost' : 'secondary'} class="tabular-nums">
+								{block.duration}
+							</Badge>
 						</div>
 						<div class="flex flex-col gap-1">
 							<span class="font-medium">{block.title}</span>

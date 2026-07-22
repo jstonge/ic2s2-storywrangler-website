@@ -33,34 +33,34 @@ export const prerequisites = [
 
 export const schedule = [
 	{
-		time: '9:00 – 9:20',
-		title: 'Welcome & motivation',
-		detail: 'Why measure collective attention? Framing the problem across platforms and timescales.'
+		time: '9:00 – 9:50',
+		duration: '50 min',
+		title: 'Introduction to the StoryWrangler platform',
+		detail: 'We present the web interfaces and Python package by which users can conduct their own analysis of Twitter, Wikipedia, Reddit, and Google Books. We go over a few results from ongoing scientific projects using the StoryWrangler platform when measuring collective attention on a set of interconnected ecological time series. We provide Jupyter notebooks to access the data and platform.'
 	},
 	{
-		time: '9:20 – 10:00',
-		title: 'The StoryWrangler platform & data',
-		detail: 'Heavy-tailed statistics of language and a tour of the corpora: Twitter, Wikipedia, Bluesky, Reddit, and Google Books.'
+		time: '9:50 – 10:00',
+		duration: '10 min',
+		title: 'Break',
+		detail: 'Stretch and refill before the next session.'
 	},
 	{
-		time: '10:00 – 10:30',
-		title: 'Rank-turbulence divergence',
-		detail: 'Principled measurement for detecting and quantifying how text shifts over time.'
+		time: '10:00 – 10:50',
+		duration: '50 min',
+		title: 'Introduction to divergence metrics and other instruments',
+		detail: 'We offer a brief explainer of the mathematics behind our rank divergence metric of choice: the rank-turbulence divergence (RTD). RTD is a visualization instrument designed for the comparison of any two ranked lists of heavy-tailed distributions which exhibit type turbulence. Following this introduction to RTD, we introduce a number of tools building on divergence metrics to capture collective attention (Allotaxonometry and Ousiometry).'
 	},
 	{
-		time: '10:30 – 10:45',
-		title: 'Coffee break',
-		detail: 'Stretch, refill, and bring your questions to the hands-on session.'
+		time: '10:50 – 11:00',
+		duration: '10 min',
+		title: 'Break',
+		detail: 'Stretch and refill before the final session.'
 	},
 	{
-		time: '10:45 – 11:30',
-		title: 'Hands-on: Python package & API',
-		detail: 'From the visual portal to custom analyses in code, then scaling up with API access.'
-	},
-	{
-		time: '11:30 – 12:00',
-		title: 'Cross-platform case studies & wrap-up',
-		detail: 'Tracking the rise and fall of narratives, comparing platforms, and where to go next.'
+		time: '11:00 – 12:00',
+		duration: '60 min',
+		title: 'Infrastructure considerations',
+		detail: 'How do we make a unified platform integrating diverse large-scale corpora maintainable, interoperable, and performant? How can people participate and collaborate in the future?'
 	}
 ];
 
