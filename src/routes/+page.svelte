@@ -4,8 +4,6 @@
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
 	import { Separator } from '$lib/components/ui/separator';
-	import { Input } from '$lib/components/ui/input';
-	import { Label } from '$lib/components/ui/label';
 
 	import MapPin from '@lucide/svelte/icons/map-pin';
 	import CalendarDays from '@lucide/svelte/icons/calendar-days';
@@ -33,18 +31,12 @@
 		{ id: 'organizers', label: 'Organizers' }
 	];
 
+	const signupUrl = 'https://forms.gle/ukdQxF8JA9UsPg1S7';
+
 	let active = $state('overview');
-	let email = $state('');
-	let submitted = $state(false);
 
 	function scrollTo(id: string) {
 		document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-	}
-
-	function submitSignup(event: SubmitEvent) {
-		event.preventDefault();
-		if (!email) return;
-		submitted = true;
 	}
 
 	$effect(() => {
@@ -231,42 +223,20 @@
 						Save your spot & get updates
 					</h2>
 					<p class="text-primary-foreground/80 text-sm leading-relaxed">
-						Leave your email and we’ll send tutorial materials, room details, and any schedule
-						changes ahead of {conference.sessionDate}.
+						Sign up and we’ll send tutorial materials, room details, and any schedule changes
+						ahead of {conference.sessionDate}.
 					</p>
 				</div>
-				<div class="flex flex-col justify-center p-8">
-					{#if submitted}
-						<div class="flex items-start gap-3">
-							<span
-								class="bg-primary/10 text-primary flex size-8 shrink-0 items-center justify-center rounded-full"
-							>
-								<Check class="size-4" />
-							</span>
-							<div class="flex flex-col gap-1">
-								<p class="font-medium">You’re on the list.</p>
-								<p class="text-muted-foreground text-sm">We’ll reach out to {email} with updates.</p>
-							</div>
-						</div>
-					{:else}
-						<form class="flex flex-col gap-4" onsubmit={submitSignup}>
-							<div class="flex flex-col gap-2">
-								<Label for="email">Email address</Label>
-								<Input
-									id="email"
-									type="email"
-									required
-									placeholder="you@university.edu"
-									bind:value={email}
-								/>
-							</div>
-							<Button type="submit">
-								<Mail data-icon="inline-start" />
-								Notify me
-							</Button>
-							<p class="text-muted-foreground text-xs">No spam — just tutorial-related updates.</p>
-						</form>
-					{/if}
+				<div class="flex flex-col justify-center gap-4 p-8">
+					<p class="text-sm leading-relaxed">
+						Add your name and email through our short Google Form to receive updates about the
+						tutorial.
+					</p>
+					<Button href={signupUrl} target="_blank" rel="noopener noreferrer" class="w-fit">
+						<Mail data-icon="inline-start" />
+						Sign up on Google Forms
+					</Button>
+					<p class="text-muted-foreground text-xs">Opens in a new tab · takes under a minute.</p>
 				</div>
 			</div>
 		</Card.Root>

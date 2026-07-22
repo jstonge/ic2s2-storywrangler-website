@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { asset } from '$app/paths';
 	import './layout.css';
 
 	let { children } = $props();
 </script>
 
-<svelte:head><link rel="icon" href={resolve('/favicon.svg')} /></svelte:head>
+<svelte:head><link rel="icon" href={asset('/favicon.svg')} /></svelte:head>
 {@render children()}
