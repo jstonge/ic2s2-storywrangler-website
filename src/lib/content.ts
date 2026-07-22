@@ -63,11 +63,11 @@ export const schedule = [
 ];
 
 export const outcomes = [
-	'Navigate the StoryWrangler front-end portal to explore large-scale text corpora without writing code.',
-	'Explain the heavy-tailed statistical properties shared across social and cultural text platforms.',
-	'Apply rank-turbulence divergence to detect and quantify changes in language use over time.',
-	'Choose the right level of access — portal, Python package, or API — for a given research question.',
-	'Design cross-platform comparisons that respect each platform’s distinct dynamics.'
+	'Apply rank-turbulence divergence and related measurements to detect shifts in collective attention across multiple platforms.',
+	'Explore visualizations and access data through the web portals, following a no-code route.',
+	'Write custom analyses with the Python packages and access raw data via the APIs.',
+	'Work with tools designed for different skill levels, from web portals to code and APIs.',
+	'Design and execute your own analyses of temporal text data using core natural language processing instruments.'
 ];
 
 export type Organizer = {
