@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { asset } from '$app/paths';
 	import * as Card from '$lib/components/ui/card';
 	import * as Avatar from '$lib/components/ui/avatar';
 	import { Badge } from '$lib/components/ui/badge';
@@ -12,6 +13,7 @@
 	import Check from '@lucide/svelte/icons/check';
 	import Mail from '@lucide/svelte/icons/mail';
 	import Sparkles from '@lucide/svelte/icons/sparkles';
+	import ExternalLink from '@lucide/svelte/icons/external-link';
 
 	import {
 		conference,
@@ -243,7 +245,7 @@
 						<Mail data-icon="inline-start" />
 						Sign up on Google Forms
 					</Button>
-					<p class="text-muted-foreground text-xs">Opens in a new tab · takes under a minute.</p>
+					<p class="text-muted-foreground text-xs">takes under a minute.</p>
 				</div>
 			</div>
 		</Card.Root>
@@ -261,7 +263,7 @@
 					<Card.Header>
 						<div class="flex items-center gap-3">
 							<Avatar.Root class="size-12">
-								<Avatar.Image src="" alt={person.name} />
+								<Avatar.Image src={asset(person.image)} alt={person.name} />
 								<Avatar.Fallback>{person.initials}</Avatar.Fallback>
 							</Avatar.Root>
 							<div class="flex flex-col">
@@ -273,6 +275,17 @@
 					<Card.Content class="flex flex-col gap-3">
 						<Badge variant="outline">{person.affiliation}</Badge>
 						<p class="text-muted-foreground text-sm leading-relaxed">{person.bio}</p>
+						{#if person.link}
+							<a
+								href={person.link}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="text-primary inline-flex w-fit items-center gap-1 text-sm font-medium hover:underline"
+							>
+								Portfolio
+								<ExternalLink class="size-3.5" />
+							</a>
+						{/if}
 					</Card.Content>
 				</Card.Root>
 			{/each}

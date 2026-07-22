@@ -76,29 +76,34 @@ export type Organizer = {
 	affiliation: string;
 	bio: string;
 	initials: string;
+	image: string;
+	link?: string;
 };
 
-// Placeholder organizer cards — replace names, roles, and bios with the confirmed lineup.
 export const organizers: Organizer[] = [
 	{
-		name: 'Organizer One',
-		role: 'Tutorial Lead',
-		affiliation: 'Computational Story Lab, University of Vermont',
-		bio: 'Researcher working on large-scale text measurement and the StoryWrangler platform. Bio to be finalized.',
-		initials: 'O1'
+		name: 'Jonathan St-Onge',
+		role: 'Research Software Engineer',
+		affiliation: 'Vermont Complex Systems Institute',
+		bio: 'Jonathan St-Onge holds a Ph.D. in Complex Systems and Data Science from the Vermont Complex Systems Institute, where he is now a research software engineer. He works with groups across the University of Vermont to create interactive and whimsical data visualizations. By working with stakeholders of varying technical expertise, he has developed a toolbox to communicate the needs and requirements to build interactive visualizations. He also works with database engineers to build and maintain the data pipelines that feed those visualizations.',
+		initials: 'JS',
+		image: '/jso.jpg'
 	},
 	{
-		name: 'Organizer Two',
-		role: 'Co-organizer',
-		affiliation: 'Computational Story Lab, University of Vermont',
-		bio: 'Focuses on measurement instruments for collective attention across social platforms. Bio to be finalized.',
-		initials: 'O2'
+		name: 'Ben Dexter Cooley',
+		role: 'Creative Technologist & Data Visualization Engineer',
+		affiliation: 'Vermont Complex Systems Institute',
+		bio: 'Ben Dexter Cooley is a creative technologist and data visualization engineer at the Vermont Complex Systems Institute. His work explores new ways of seeing and experiencing information through data visualization, interaction design, and creative coding. With a background in journalism, Ben sees visualization as fundamentally an exercise in data storytelling. He has previously visualized data with scientists at the Broad Institute, taught data visualization at Northeastern University, and built interactive data sites for Cornell’s Lab of Ornithology, flood relief platforms, and various online publications.',
+		initials: 'BC',
+		image: '/ben.jpg',
+		link: 'https://benjamincooley.com/'
 	},
 	{
-		name: 'Organizer Three',
-		role: 'Co-organizer',
-		affiliation: 'Computational Story Lab, University of Vermont',
-		bio: 'Works on data infrastructure and accessible tooling for corpus-scale analysis. Bio to be finalized.',
-		initials: 'O3'
+		name: 'Michael Arnold',
+		role: 'Research Computing Data Engineer',
+		affiliation: 'Vermont Complex Systems Institute',
+		bio: 'Michael Arnold is a Research Computing Data Engineer at the Vermont Complex Systems Institute, where he builds scalable data infrastructure to measure and understand social phenomena. His work focuses on developing data pipelines and computational tools that let researchers access and analyze large-scale text datasets. His research interests include collective attention, natural language processing, and machine learning for social measurement. He manages large-scale database systems and high-performance computing workflows supporting research at the University of Vermont.',
+		initials: 'MA',
+		image: '/michael-arnold.jpg'
 	}
 ];
